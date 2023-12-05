@@ -1,12 +1,13 @@
 <?php
 
-class Berita extends Controller{
+class Berita extends Controller
+{
     protected $data = [];
 
     public function __construct()
     {
         if (isset($_SESSION['id_login'])) {
-            header('Location: ' . BASEURL .'/admin/index');
+            header('Location: ' . BASEURL . '/admin/index');
         }
         Flasher::flash();
     }
@@ -18,36 +19,36 @@ class Berita extends Controller{
         $data['berita'] = $this->model('Berita_model')->getAllBerita();
 
         //menampilkan view
-        $this->view('componens/header',$data);
-        $this->view('berita',$data);
-        $this->view('componens/footer',$data);
+        $this->view('componens/header', $data);
+        $this->view('berita', $data);
+        $this->view('componens/footer', $data);
     }
 
 
     //tambah Berita
-    public function tambah(){
-        if ( $this->model('Berita_model')->tambahDataBerita($_POST) > 0) { //memanggil Berita_model untuk mengolah data
-            Flasher::seFlash('Berita','Berhasil','ditambahkan','success'); // mengirimkan parameter untuk dikelolah flasher
-            header('Location: ' . BASEURL .'/admin/data_kelas');
+    public function tambah()
+    {
+        if ($this->model('Berita_model')->tambahDataBerita($_POST) > 0) { //memanggil Berita_model untuk mengolah data
+            Flasher::seFlash('Berita', 'Berhasil', 'ditambahkan', 'success'); // mengirimkan parameter untuk dikelolah flasher
+            header('Location: ' . BASEURL . '/admin/data_kelas');
             exit;
-        }
-        else {
-            Flasher::seFlash('Berita','Gagal','ditambahkan','danger');// mengirimkan parameter untuk dikelolah flasher
-            header('Location: ' . BASEURL .'/admin/data_kelas');
+        } else {
+            Flasher::seFlash('Berita', 'Gagal', 'ditambahkan', 'danger'); // mengirimkan parameter untuk dikelolah flasher
+            header('Location: ' . BASEURL . '/admin/data_kelas');
             exit;
         }
     }
 
     //ubah data
-    public function ubah(){
-        if ( $this->model('Berita_model')->ubahDataBerita($_POST) > 0) { //memanggil Berita_model untuk mengolah data
-            Flasher::seFlash('Berita','Berhasil','diubah','success'); // mengirimkan parameter untuk dikelolah flasher
-            header('Location: ' . BASEURL .'/admin/data_Kelas');
+    public function ubah()
+    {
+        if ($this->model('Berita_model')->ubahDataBerita($_POST) > 0) { //memanggil Berita_model untuk mengolah data
+            Flasher::seFlash('Berita', 'Berhasil', 'diubah', 'success'); // mengirimkan parameter untuk dikelolah flasher
+            header('Location: ' . BASEURL . '/admin/data_Kelas');
             exit;
-        }
-        else {
-            Flasher::seFlash('Berita','Gagal','diubah','danger');// mengirimkan parameter untuk dikelolah flasher
-            header('Location: ' . BASEURL .'/admin/data_Kelas');
+        } else {
+            Flasher::seFlash('Berita', 'Gagal', 'diubah', 'danger'); // mengirimkan parameter untuk dikelolah flasher
+            header('Location: ' . BASEURL . '/admin/data_Kelas');
             exit;
         }
     }
@@ -55,7 +56,7 @@ class Berita extends Controller{
     //get data
     public function getUbah()
     {
-        echo json_encode( $this->model('Berita_model')->getBeritaById($_POST['id']));
+        echo json_encode($this->model('Berita_model')->getDataBeritaById($_POST['id']));
     }
 
     //detail Berita
@@ -63,7 +64,7 @@ class Berita extends Controller{
     {
         //set session  navbarr
         $data['judul'] = "Detail Berita";
-        
+
         $data['berita'] = $this->model('Berita_model')->getBeritaById($id);
 
         $data['rekomendasi'] = $this->model('Berita_model')->getRekomendasiBerita($id);
@@ -72,20 +73,20 @@ class Berita extends Controller{
 
         // var_dump($data['kelas']);die;
         //menampilkan view
-        $this->view('componens/header',$data);
-        $this->view('detail_berita',$data);
-        $this->view('componens/footer',$data);
+        $this->view('componens/header', $data);
+        $this->view('detail_berita', $data);
+        $this->view('componens/footer', $data);
     }
 
-    public function hapus($id){
-        if ( $this->model('Berita_model')->hapusDataBerita($id) > 0) { //memanggil Berita_model untuk mengolah data
-            Flasher::seFlash('Berita','Berhasil','dihapus','success'); // mengirimkan parameter untuk dikelolah flasher
-            header('Location: ' . BASEURL .'/admin/data_kelas/');
+    public function hapus($id)
+    {
+        if ($this->model('Berita_model')->hapusDataBerita($id) > 0) { //memanggil Berita_model untuk mengolah data
+            Flasher::seFlash('Berita', 'Berhasil', 'dihapus', 'success'); // mengirimkan parameter untuk dikelolah flasher
+            header('Location: ' . BASEURL . '/admin/data_kelas/');
             exit;
-        }
-        else {
-            Flasher::seFlash('Berita','Gagal','dihapus','danger');// mengirimkan parameter untuk dikelolah flasher
-            header('Location: ' . BASEURL .'/admin/data_kelas/');
+        } else {
+            Flasher::seFlash('Berita', 'Gagal', 'dihapus', 'danger'); // mengirimkan parameter untuk dikelolah flasher
+            header('Location: ' . BASEURL . '/admin/data_kelas/');
             exit;
         }
     }

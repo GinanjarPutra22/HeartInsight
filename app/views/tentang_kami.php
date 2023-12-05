@@ -1,8 +1,8 @@
 <div class="container my-lg-5">
 
-        <!-- <div class="HERO row my-5">
+    <!-- <div class="HERO row my-5">
             <div class="col-md-6 d-flex justify-content-center  order-md-2 order-lg-last">
-                <img class="img w-100" src="<?= BASEURL;?>/public/img/illustrations/HeroAboutUs01.svg" alt=""
+                <img class="img w-100" src="<?= BASEURL; ?>/public/img/illustrations/HeroAboutUs01.svg" alt=""
                     class="justify-content-center" />
             </div>
             <div class="col-md-6 d-flex align-items-center authentication-inner">
@@ -35,7 +35,7 @@
         <div class="HERO row my-5 justify-content-start align-items-start">
 
             <div class="col-md-6 d-flex justify-content-start  authentication-inner">
-                <img class="img w-100" src="<?= BASEURL;?>/public/img/illustrations/hero-about-2.svg" alt=""
+                <img class="img w-100" src="<?= BASEURL; ?>/public/img/illustrations/hero-about-2.svg" alt=""
                     class="justify-content-center" />
             </div>
 
@@ -80,7 +80,8 @@
             <div class="col-lg-4 col-md-6 mb-4 rounded ">
                 <div class="card p-3 ">
                     <div class="img-box mb-3">
-                        <img src="<?= BASEURL?>/public/img/assets/avatars/Ginan.png" alt="" class="img-fluid figure-img rounded h-75 " />
+                        <img src="<?= BASEURL ?>/public/img/assets/Ginan.png" alt=""
+                            class="img-fluid figure-img rounded h-75 " />
                     </div>
                     <div class="product-caption text-center">
                         <p class="product-name fs-5 text-primary fw-bold ">
@@ -118,7 +119,8 @@
             <div class="col-lg-4 col-md-6 mb-4 rounded ">
                 <div class="card p-3 ">
                     <div class="img-box">
-                        <img src="<?= BASEURL;?>/public/img/assets/avatars/Ferdy.png" alt="" class="img-fluid figure-img rounded h-75 " />
+                        <img src="<?= BASEURL; ?>/public/img/assets/Ferdy.png" alt=""
+                            class="img-fluid figure-img rounded h-75 " />
                     </div>
                     <div class="product-caption mt-2 text-center">
                         <p class="product-name fs-5 text-primary fw-bold ">
@@ -152,7 +154,8 @@
             <div class="col-lg-4 col-md-6 mb-4 rounded ">
                 <div class="card p-3 ">
                     <div class="img-box">
-                        <img src="<?= BASEURL;?>/public/img/assets/avatars/" alt="" class="img-fluid figure-img rounded h-75 " />
+                        <img src="<?= BASEURL; ?>/public/img/assets/" alt=""
+                            class="img-fluid figure-img rounded h-75 " />
                     </div>
                     <div class="product-caption mt-2 text-center">
                         <p class="product-name fs-5 text-primary fw-bold ">
@@ -186,7 +189,8 @@
             <div class="col-lg-4 col-md-6 mb-4 rounded ">
                 <div class="card p-3 ">
                     <div class="img-box">
-                        <img src="<?= BASEURL;?>/public/img/assets/avatars/Vina.png" alt="" class="img-fluid figure-img rounded h-75 " />
+                        <img src="<?= BASEURL; ?>/public/img/assets/Vina.png" alt=""
+                            class="img-fluid figure-img rounded h-75 " />
                     </div>
                     <div class="product-caption mt-2 text-center">
                         <p class="product-name fs-5 text-primary fw-bold ">
@@ -228,7 +232,7 @@
     <!-- <div class="container my-lg-5 mb-5 ">
         <div class="HERO row my-5">
             <div class="col-md-6 d-flex justify-content-center  order-md-2 order-lg-last">
-                <img class="img w-100" src="<?= BASEURL;?>/public/img/illustrations/Hero 1.svg" alt=""
+                <img class="img w-100" src="<?= BASEURL; ?>/public/img/illustrations/Hero 1.svg" alt=""
                     class="justify-content-center" />
             </div>
             <div class="col-md-6 d-flex align-items-center authentication-inner">

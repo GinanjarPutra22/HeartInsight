@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
-<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="<?= BASEURL?>/public/"
-  data-template="vertical-menu-template-free">
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default"
+  data-assets-path="<?= BASEURL ?>/public/" data-template="vertical-menu-template-free">
 
 <head>
   <meta charset="utf-8" />
@@ -14,11 +14,11 @@
 
   <!-- Favicon -->
 
-  <link rel="icon" type="image/x-icon" href="<?= BASEURL?>/public/img/favicon/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="<?= BASEURL ?>/public/img/favicon/favicon.ico" />
 
-  <script src="<?= BASEURL;?>/public/js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
+  <script src="<?= BASEURL; ?>/public/js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
 
-  <script>tinymce.init({selector:'textarea'});</script>
+  <script>tinymce.init({ selector: 'textarea' });</script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,26 +28,27 @@
     rel="stylesheet" />
 
   <!-- Icons. Uncomment required icon fonts -->
-  <link rel="stylesheet" href="<?= BASEURL?>/public/vendor/fonts/boxicons.css" />
+  <link rel="stylesheet" href="<?= BASEURL ?>/public/vendor/fonts/boxicons.css" />
 
   <!-- Core CSS -->
-  <link rel="stylesheet" href="<?= BASEURL?>/public/vendor/css/core.css" class="template-customizer-core-css" />
-  <link rel="stylesheet" href="<?= BASEURL?>/public/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-  <link rel="stylesheet" href="<?= BASEURL?>/public/css/demo.css" />
+  <link rel="stylesheet" href="<?= BASEURL ?>/public/vendor/css/core.css" class="template-customizer-core-css" />
+  <link rel="stylesheet" href="<?= BASEURL ?>/public/vendor/css/theme-default.css"
+    class="template-customizer-theme-css" />
+  <link rel="stylesheet" href="<?= BASEURL ?>/public/css/demo.css" />
 
   <!-- Vendors CSS -->
-  <link rel="stylesheet" href="<?= BASEURL?>/public/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+  <link rel="stylesheet" href="<?= BASEURL ?>/public/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
-  <link rel="stylesheet" href="<?= BASEURL?>/public/vendor/libs/apex-charts/apex-charts.css" />
+  <link rel="stylesheet" href="<?= BASEURL ?>/public/vendor/libs/apex-charts/apex-charts.css" />
 
   <!-- Page CSS -->
 
   <!-- Helpers -->
-  <script src="<?= BASEURL?>/public/vendor/js/helpers.js"></script>
+  <script src="<?= BASEURL ?>/public/vendor/js/helpers.js"></script>
 
   <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-  <script src="<?= BASEURL?>/public/js/config.js"></script>
+  <script src="<?= BASEURL ?>/public/js/config.js"></script>
 </head>
 
 <body>
@@ -59,7 +60,7 @@
       <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
 
         <div class="app-brand demo">
-          <a href="<?= BASEURL?>/admin/" class="app-brand-link">
+          <a href="<?= BASEURL ?>/admin/" class="app-brand-link">
             <span class="app-brand-logo demo">
               <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -118,16 +119,16 @@
         <ul class="menu-inner py-1">
           <!-- Dashboard -->
           <li class="menu-item <?= ($data['judul'] === 'Dashboard Admin') ? 'active' : '' ?>">
-            <a href="<?= BASEURL;?>/admin/" class="menu-link">
+            <a href="<?= BASEURL; ?>/admin/" class="menu-link">
               <i class='menu-icon tf-icons bx bx-customize'></i>
               <div data-i18n="Analytics">Dashboard </div>
             </a>
           </li>
           <!-- Tables -->
           <li class="menu-item <?= ($data['judul'] === 'Berita') ? 'active' : '' ?>">
-            <a href="<?= BASEURL;?>/admin/berita" class="menu-link">
+            <a href="<?= BASEURL; ?>/admin/berita" class="menu-link">
               <i class="menu-icon tf-icons bx bx-user-check"></i>
-              <div data-i18n="Tables">Data User</div>
+              <div data-i18n="Tables">Berita</div>
             </a>
           </li>
           <!-- Misc -->
@@ -161,7 +162,9 @@
             <!-- Search -->
             <div class="navbar-nav align-items-center">
               <div class="nav-item d-flex align-items-center">
-                <h5 class="fw-bold mt-3"> <?= $data['judul']?></h5>
+                <h5 class="fw-bold mt-3">
+                  <?= $data['judul'] ?>
+                </h5>
               </div>
             </div>
             <!-- /Search -->
@@ -170,44 +173,44 @@
 
 
               <!-- User -->
-              <?php if (isset($_SESSION['id_login'])) {?>
+              <?php if (isset($_SESSION['id_login'])) { ?>
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                    <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
-                                data-bs-toggle="dropdown">
-                        <div class="avatar avatar-online">
-                            <img src="<?= BASEURL;?>/public/img/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                    <div class="avatar avatar-online">
+                      <img src="<?= BASEURL; ?>/public/img/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                    </div>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <div class="d-flex align-items-center dropdown-item">
+                        <div class="flex-shrink-0 me-3">
+                          <div class="avatar avatar-online">
+                            <img src="<?= BASEURL; ?>/public/img/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                          </div>
                         </div>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li>
-                            <div class="d-flex align-items-center dropdown-item">
-                                <div class="flex-shrink-0 me-3">
-                                    <div class="avatar avatar-online">
-                                        <img src="<?= BASEURL;?>/public/img/1.png" alt
-                                            class="w-px-40 h-auto rounded-circle" />
-                                    </div>
-                                </div>
-                                <span class="fw-semibold d-block"><?= $data['login']['nama']?></span>
-                            </div>
+                        <span class="fw-semibold d-block">
+                          <?= $data['login']['nama'] ?>
+                        </span>
+                      </div>
 
-                        </li>
-                        <li>
-                            <div class="dropdown-divider"></div>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="<?= BASEURL;?>/auth/logout">
-                                <i class="bx bx-power-off me-2"></i>
-                                <span class="align-middle">Log Out</span>
-                            </a>
-                        </li>
-                    </ul>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="<?= BASEURL; ?>/auth/logout">
+                        <i class="bx bx-power-off me-2"></i>
+                        <span class="align-middle">Log Out</span>
+                      </a>
+                    </li>
+                  </ul>
                 </li>
-                <?php }else{?>
-                <li class="mt-2">      
-                    <a href="<?= BASEURL;?>/auth/login" type="button" class="btn btn-outline-primary">Masuk</a>
-                    <a href="<?= BASEURL;?>/auth/regist" class="btn btn-primary">Daftar</a>
+              <?php } else { ?>
+                <li class="mt-2">
+                  <a href="<?= BASEURL; ?>/auth/login" type="button" class="btn btn-outline-primary">Masuk</a>
+                  <a href="<?= BASEURL; ?>/auth/regist" class="btn btn-primary">Daftar</a>
                 </li>
-                <?php }?>
+              <?php } ?>
               <!--/ User -->
             </ul>
           </div>

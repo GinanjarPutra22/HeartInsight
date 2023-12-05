@@ -1,6 +1,7 @@
 <?php
 
-class Berita_model {
+class Berita_model
+{
     private $db;
 
     public function __construct()
@@ -18,11 +19,18 @@ class Berita_model {
 
         $this->db->query('SELECT * FROM berita
                             WHERE berita.id_berita=:id');
-        $this->db->bind('id',$id);
-        
+        $this->db->bind('id', $id);
+
         return $this->db->single();
     }
+    public function getDataBeritaById($id)
+    {
+        $this->db->query('SELECT * FROM berita
+                            WHERE id_berita=:id');
+        $this->db->bind('id', $id);
 
+        return $this->db->single();
+    }
     public function getAllBerita()
     {
         $this->db->query('SELECT * FROM berita');
@@ -38,7 +46,7 @@ class Berita_model {
                             ORDER BY total_pengunjung DESC 
                             LIMIT 3');
 
-        $this->db->bind('id',$id);
+        $this->db->bind('id', $id);
         return $this->db->resultSet();
     }
     // public function getLoginByIdMentor($id)
@@ -59,7 +67,7 @@ class Berita_model {
             $query = "INSERT INTO berita (id_berita, judul_berita, penulis_berita, waktu_penulisan,isi_berita,foto_berita)
                         VALUES 
                     ('', :judul_berita, :penulis_berita, :waktu_penulisan, :isi_berita, :foto_berita)";
-            
+
             date_default_timezone_set('Asia/Jakarta');
             $data['waktu_penulisan'] = date('Y-m-d H:i:s');
 
@@ -105,19 +113,19 @@ class Berita_model {
             WHERE id_berita = :id_berita";
 
         $fotolama = $data['e_foto_berita'];
-        
+
         if ($_FILES['foto_berita']['error'] === 4) {
             $data['foto_berita'] = $fotolama;
         } else {
             echo "Error code: " . $_FILES['foto_berita']['error'];
             if ($fotolama === "1.png") {
                 $data['foto_berita'] = $this->tambahGambar();
-            }else{
+            } else {
                 $tempat = "public/img/asset/" . $fotolama;
                 unlink($tempat);
                 $data['foto_berita'] = $this->tambahGambar();
             }
-            }
+        }
 
         $this->db->query($query);
         $this->db->bind('id_berita', $data['id_berita']);
@@ -133,8 +141,8 @@ class Berita_model {
     //ketika mengubah profile
     // public function ubahDataUser($data){
     //     // var_dump($data);die;
-        // try {
-        //     $this->db->beginTransaction(); // Mulai transaksi
+    // try {
+    //     $this->db->beginTransaction(); // Mulai transaksi
     //         // var_dump($data);die;
     //         $query = "UPDATE ". $this->table . "
     //                     SET 
@@ -147,20 +155,20 @@ class Berita_model {
     //                     kota = :kota 
     //                     WHERE id_profile = :id_profile";
 
-            // $fotolama = $data['e_foto_user'];
-        
-            // if ($_FILES['foto_user']['error'] === 4) {
-            //     $data['foto_user'] = $fotolama;
-            // } else {
-            //     echo "Error code: " . $_FILES['foto_user']['error'];
-            //     if ($fotolama === "1.png") {
-            //         $data['foto_user'] = $this->tambahGambar();
-            //     }else{
-            //         $tempat = "public/img/asset/" . $fotolama;
-            //         unlink($tempat);
-            //         $data['foto_user'] = $this->tambahGambar();
-            //     }
-            // }
+    // $fotolama = $data['e_foto_user'];
+
+    // if ($_FILES['foto_user']['error'] === 4) {
+    //     $data['foto_user'] = $fotolama;
+    // } else {
+    //     echo "Error code: " . $_FILES['foto_user']['error'];
+    //     if ($fotolama === "1.png") {
+    //         $data['foto_user'] = $this->tambahGambar();
+    //     }else{
+    //         $tempat = "public/img/asset/" . $fotolama;
+    //         unlink($tempat);
+    //         $data['foto_user'] = $this->tambahGambar();
+    //     }
+    // }
 
     //         // var_dump($data);die;
     //         $this->db->query($query);
@@ -190,11 +198,11 @@ class Berita_model {
     //         $this->db->commit();
 
     //         return $this->db->rowCount();
-            
-        // } catch (PDOException $e) {
-        //     $this->db->rollBack(); // Rollback jika terjadi kesalahan
-        //     die("Error: " . $e->getMessage());
-        // }
+
+    // } catch (PDOException $e) {
+    //     $this->db->rollBack(); // Rollback jika terjadi kesalahan
+    //     die("Error: " . $e->getMessage());
+    // }
 
     // }
 
@@ -205,7 +213,7 @@ class Berita_model {
         $query = "SELECT * FROM login WHERE username = :username";
         $this->db->query($query);
 
-        $this->db->bind('username',$username);
+        $this->db->bind('username', $username);
 
         $this->db->execute();
 
@@ -214,51 +222,52 @@ class Berita_model {
         // if ($user && $password) {
         if ($user && password_verify($password, $user['password'])) {
             // var_dump($user);die;
-                $_SESSION['id_login'] = $user['id_login'];
+            $_SESSION['id_login'] = $user['id_login'];
             return $user; // Login berhasil
         }
 
         return false; // Login gagal
     }
 
-    public function tambahGambar(){
+    public function tambahGambar()
+    {
         $namafile = $_FILES['foto_berita']['name'];
         $ukuranfile = $_FILES['foto_berita']['size'];
         $error = $_FILES['foto_berita']['error'];
         $tmpname = $_FILES['foto_berita']['tmp_name'];
-    
+
         // cek apakah ada gambar yang diupload
         if ($error === 4) {
             return false;
         }
-    
+
         // cek yang diupload ekstensinya apkah gambar atau bukan
         $ekstensigambarValid = ['jpg', 'png', 'jpeg'];
         $ekstensigambar = explode('.', $namafile); // sebagai pemisah antara nama file dengan ekstensi
         //  contohnya ferdy.png maka menjadi ['ferdy','png']
         $ekstensigambar = strtolower(end($ekstensigambar)); // strtolower merubah nama file menjadi lowercase/ huruf kecil
         // end mengambil explode yang paling akhir
-    
+
         if (!in_array($ekstensigambar, $ekstensigambarValid)) { // melakukan pengecekan string didalam array
             // fungsi ini menghasilkan true jika ada false jika tidak
             return false;
         }
-    
+
         // cek jika ukurannya terlalu besar
         if ($ukuranfile > 5000000000) { //dalam bentuk byte
             return false;
         }
-    
+
         //lolos pengecekan gambar siap diupload
-    
+
         // generate nama gambar random baruu
         $namafilebaru = uniqid();
         $namafilebaru .= '.';
         $namafilebaru .= $ekstensigambar;
-    
+
         // mengirim kedalam directory 
         move_uploaded_file($tmpname, 'public/img/berita/' . $namafilebaru);
-    
+
         return $namafilebaru;
     }
 
