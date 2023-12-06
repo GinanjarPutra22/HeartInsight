@@ -7,7 +7,7 @@
                 </h3>
                 <p class="animated slideInDown">"Temukan informasi terkini tentang kesehatan jantung: tips, risiko,
                     dan gaya hidup sehat untuk menjaga detak yang jantung optimal ."</p>
-                <a href="" class="btn btn-primary py-3 px-4 animated slideInDown me-4 mb-sm-0 mb-3">Cek Kesehata
+                <a href="<?= BASEURL?>/cek_jantung" class="btn btn-primary py-3 px-4 animated slideInDown me-4 mb-sm-0 mb-3">Cek Kesehata
                     Jantung</a>
 
             </div>

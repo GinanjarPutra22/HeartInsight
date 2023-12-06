@@ -46,7 +46,7 @@
             <div class="navbar-nav ms-auto py-4 py-lg-0">
                 <a href="<?= BASEURL?>/" class="nav-item nav-link <?= ($data['judul'] === 'Dashboard') ? 'active' : '' ?>">Home</a>
                 <a href="<?= BASEURL?>/berita" class="nav-item nav-link <?= ($data['judul'] === 'Berita') ? 'active' : '' ?>">Berita</a>
-                <a href="cek-jantung.html" class="nav-item nav-link">Cek Jantung</a>
+                <a href="<?= BASEURL?>/cek_jantung" class="nav-item nav-link <?= ($data['judul'] === 'Jantung') ? 'active' : '' ?>">Cek Jantung</a>
                 <a href="<?= BASEURL?>/tentang_kami" class="nav-item nav-link <?= ($data['judul'] === 'Tentang Kami') ? 'active' : '' ?>">Tentang Kami</a>
 
 
