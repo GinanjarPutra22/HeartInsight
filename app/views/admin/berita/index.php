@@ -89,7 +89,7 @@
                         <label for="penulis_berita" class="form-label">Penulis Berita</label>
                         <input type="penulis_berita" class="form-control" id="penulis_berita" name="penulis_berita">
                     </div>
-                    <textarea id="teks" name="isi_berita">Isi Berita Anda</textarea>
+                    <textarea id="mytextarea" name="isi_berita"></textarea>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

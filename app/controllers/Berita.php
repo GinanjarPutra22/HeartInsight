@@ -2,15 +2,6 @@
 
 class Berita extends Controller
 {
-    protected $data = [];
-
-    public function __construct()
-    {
-        if (isset($_SESSION['id_login'])) {
-            header('Location: ' . BASEURL . '/admin/index');
-        }
-        Flasher::flash();
-    }
 
     public function index()
     {
@@ -30,11 +21,11 @@ class Berita extends Controller
     {
         if ($this->model('Berita_model')->tambahDataBerita($_POST) > 0) { //memanggil Berita_model untuk mengolah data
             Flasher::seFlash('Berita', 'Berhasil', 'ditambahkan', 'success'); // mengirimkan parameter untuk dikelolah flasher
-            header('Location: ' . BASEURL . '/admin/data_kelas');
+            header('Location: ' . BASEURL . '/admin');
             exit;
         } else {
             Flasher::seFlash('Berita', 'Gagal', 'ditambahkan', 'danger'); // mengirimkan parameter untuk dikelolah flasher
-            header('Location: ' . BASEURL . '/admin/data_kelas');
+            header('Location: ' . BASEURL . '/admin');
             exit;
         }
     }
@@ -44,11 +35,11 @@ class Berita extends Controller
     {
         if ($this->model('Berita_model')->ubahDataBerita($_POST) > 0) { //memanggil Berita_model untuk mengolah data
             Flasher::seFlash('Berita', 'Berhasil', 'diubah', 'success'); // mengirimkan parameter untuk dikelolah flasher
-            header('Location: ' . BASEURL . '/admin/data_Kelas');
+            header('Location: ' . BASEURL . '/admin');
             exit;
         } else {
             Flasher::seFlash('Berita', 'Gagal', 'diubah', 'danger'); // mengirimkan parameter untuk dikelolah flasher
-            header('Location: ' . BASEURL . '/admin/data_Kelas');
+            header('Location: ' . BASEURL . '/admin');
             exit;
         }
     }
@@ -82,11 +73,11 @@ class Berita extends Controller
     {
         if ($this->model('Berita_model')->hapusDataBerita($id) > 0) { //memanggil Berita_model untuk mengolah data
             Flasher::seFlash('Berita', 'Berhasil', 'dihapus', 'success'); // mengirimkan parameter untuk dikelolah flasher
-            header('Location: ' . BASEURL . '/admin/data_kelas/');
+            header('Location: ' . BASEURL . '/admin/berita/');
             exit;
         } else {
             Flasher::seFlash('Berita', 'Gagal', 'dihapus', 'danger'); // mengirimkan parameter untuk dikelolah flasher
-            header('Location: ' . BASEURL . '/admin/data_kelas/');
+            header('Location: ' . BASEURL . '/admin/berita/');
             exit;
         }
     }

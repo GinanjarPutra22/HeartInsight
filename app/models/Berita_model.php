@@ -49,14 +49,6 @@ class Berita_model
         $this->db->bind('id', $id);
         return $this->db->resultSet();
     }
-    // public function getLoginByIdMentor($id)
-    // {
-    //     $this->db->query('SELECT * FROM mentor 
-    //                         INNER JOIN login ON login.id_profile_mentor = mentor.id_profile_mentor
-    //                         WHERE mentor.id_profile_mentor=:id');
-    //     $this->db->bind('id',$id);
-    //     return $this->db->single();
-    // }
 
     //ketika registt
     public function tambahDataBerita($data)
@@ -104,6 +96,7 @@ class Berita_model
 
     public function ubahDataBerita($data)
     {
+        // var_dump($data);die;
         $query = "UPDATE berita
             SET 
             judul_berita = :judul_berita, 
@@ -138,96 +131,32 @@ class Berita_model
         return $this->db->rowCount();
     }
 
-    //ketika mengubah profile
-    // public function ubahDataUser($data){
-    //     // var_dump($data);die;
-    // try {
-    //     $this->db->beginTransaction(); // Mulai transaksi
-    //         // var_dump($data);die;
-    //         $query = "UPDATE ". $this->table . "
-    //                     SET 
-    //                     nama_user = :nama_user, 
-    //                     email = :email,
-    //                     nomor_hp = :nomor_hp,
-    //                     foto_user = :foto_user,
-    //                     alamat = :alamat,
-    //                     provinsi = :provinsi,
-    //                     kota = :kota 
-    //                     WHERE id_profile = :id_profile";
-
-    // $fotolama = $data['e_foto_user'];
-
-    // if ($_FILES['foto_user']['error'] === 4) {
-    //     $data['foto_user'] = $fotolama;
-    // } else {
-    //     echo "Error code: " . $_FILES['foto_user']['error'];
-    //     if ($fotolama === "1.png") {
-    //         $data['foto_user'] = $this->tambahGambar();
-    //     }else{
-    //         $tempat = "public/img/asset/" . $fotolama;
-    //         unlink($tempat);
-    //         $data['foto_user'] = $this->tambahGambar();
-    //     }
-    // }
-
-    //         // var_dump($data);die;
-    //         $this->db->query($query);
-    //         $this->db->bind('id_profile', $data['id_profile']); //$data[]'nama'] dari name form
-    //         $this->db->bind('nama_user', $data['nama_user']); //$data[]'nama'] dari name form
-    //         $this->db->bind('email', $data['email']); //$data[]'nama'] dari name form
-    //         $this->db->bind('nomor_hp', $data['nomor_hp']); 
-    //         $this->db->bind('foto_user',$data['foto_user'] ); 
-    //         $this->db->bind('alamat', $data['alamat']); 
-    //         $this->db->bind('provinsi', $data['provinsi']); 
-    //         $this->db->bind('kota', $data['kota']); 
-
-    //         $this->db->execute();
-
-    //         $query2 = "UPDATE login SET
-    //                     username = :username,
-    //                     password = :password
-    //                     WHERE id_profile = :id_profile";
-
-    //         $this->db->query($query2);
-
-    //         $this->db->bind('id_profile', $data['id_profile']); 
-    //         $this->db->bind('username',$data['username'] ); 
-    //         $this->db->bind('password',password_hash($data['password'], PASSWORD_DEFAULT) ); 
-    //         $this->db->execute();
-
-    //         $this->db->commit();
-
-    //         return $this->db->rowCount();
-
-    // } catch (PDOException $e) {
-    //     $this->db->rollBack(); // Rollback jika terjadi kesalahan
-    //     die("Error: " . $e->getMessage());
-    // }
-
-    // }
-
-
-    //untuk set login dan set session
-    public function login($username, $password)
-    {
-        $query = "SELECT * FROM login WHERE username = :username";
-        $this->db->query($query);
-
-        $this->db->bind('username', $username);
-
-        $this->db->execute();
-
-        $user = $this->db->single();
-
-        // if ($user && $password) {
-        if ($user && password_verify($password, $user['password'])) {
-            // var_dump($user);die;
-            $_SESSION['id_login'] = $user['id_login'];
-            return $user; // Login berhasil
+    public function hapusDataBerita($id) {
+        try {
+            $this->db->beginTransaction();
+    
+            // Delete from 'pengunjung' table first to respect foreign key constraint
+            $queryPengunjung = "DELETE FROM pengunjung WHERE id_berita = :id";
+            $this->db->query($queryPengunjung);
+            $this->db->bind('id', $id);
+            $this->db->execute();
+    
+            // Now you can safely delete from 'Berita' table
+            $queryBerita = 'DELETE FROM Berita WHERE id_berita = :id';
+            $this->db->query($queryBerita);
+            $this->db->bind('id', $id);
+            $this->db->execute();
+    
+            $this->db->commit();
+    
+            return $this->db->rowCount();
+        } catch (PDOException $e) {
+            $this->db->rollBack(); // Rollback jika terjadi kesalahan
+            die("Error: " . $e->getMessage());
         }
-
-        return false; // Login gagal
     }
+    
+
 
     public function tambahGambar()
     {
