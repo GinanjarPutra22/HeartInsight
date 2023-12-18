@@ -1,29 +1,29 @@
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="row justify-content-between mb-4">
-        <div class="col-9 d-flex gap-2 ">
-            <div class="col-6">
-                <div class="input-group input-group-merge">
-                    <input type="search" id="form1" class="form-control" placeholder="Cari Berita..."
-                        aria-label="Search" />
+        <form action="<?= BASEURL; ?>/admin/berita" method="post">
+            <div class="col-9 d-flex gap-2 ">
+                <div class="col-6">
+                    <div class="input-group input-group-merge">
+                        <input type="text" id="keyword" name="keyword" class="form-control" placeholder="Cari Berita..."
+                            aria-label="Search" />
+                    </div>
                 </div>
-            </div>
-            <div class="col-2">
-                <button class="btn btn-primary" type="button"> Cari Berita</button>
-            </div>
-            <div class="col-2">
-                <button type="button" class="btn btn-icon btn-primary">
-                    <i class='bx bx-refresh'></i>
-                </button>
-            </div>
-        </div>
-        <div class="col-3 ">
-            <div class="d-grid gap-3 d-md-flex d-flex justify-content-md-end">
-                <div class=" text-center">
-                    <button type="button" class="btn btn-primary ModalTambahBerita" data-bs-toggle="modal"
-                        data-bs-target="#formModalBerita">
-                        Tambah Materi
+                <div class="col-2">
+                    <button class="btn btn-primary" type="submit" id="tombolCari"> Cari</button>
+                </div>
+                <div class="col-2">
+                    <button type="submit" class="btn btn-icon btn-primary">
+                        <i class='bx bx-refresh'></i>
                     </button>
                 </div>
+            </div>
+        </form>
+        <div class="col-3 d-flex gap-2 justify-content-md-end">
+            <div class=" text-center">
+                <button type="button" class="btn btn-primary ModalTambahBerita" data-bs-toggle="modal"
+                    data-bs-target="#formModalBerita">
+                    Tambah Materi
+                </button>
             </div>
         </div>
     </div>
@@ -39,7 +39,7 @@
                 </tr>
             </thead>
             <tbody class="table-border-bottom-4">
-                <?php foreach ($data['Berita'] as $berita): ?>
+                <?php foreach ($data['berita'] as $berita): ?>
                     <tr class="text-center align-baseline gap-5">
                         <td>
                             <div class="d-grid gap-2 d-md-flex d-flex justify-content-md-center">

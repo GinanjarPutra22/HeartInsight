@@ -50,6 +50,17 @@ class Berita_model
         return $this->db->resultSet();
     }
 
+    public function cari(){
+        $keyword = $_POST['keyword'];
+
+        $query = "SELECT * FROM berita WHERE judul_berita LIKE :keyword";
+
+        $this->db->query($query);
+        $this->db->bind('keyword',"%$keyword%");
+        
+        return $this->db->resultSet();
+    }    
+
     //ketika registt
     public function tambahDataBerita($data)
     {

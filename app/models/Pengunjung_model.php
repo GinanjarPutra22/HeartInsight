@@ -24,5 +24,18 @@ class Pengunjung_model {
 
         return $this->db->resultSet();
     }
+
+    public function cari(){
+        $keyword = $_POST['keyword'];
+
+        $query = "SELECT * FROM pengunjung
+                    INNER JOIN berita ON pengunjung.id_berita = berita.id_berita 
+                    WHERE berita.judul_berita LIKE :keyword";
+
+        $this->db->query($query);
+        $this->db->bind('keyword',"%$keyword%");
+        
+        return $this->db->resultSet();
+    }    
 }
 ?>

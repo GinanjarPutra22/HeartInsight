@@ -19,7 +19,11 @@ class Admin extends Controller{
 
         $data['login'] = $this->model('Auth_model')->getLoginById($_SESSION['id_login']);
         
-        $data['total_pengunjung']= $this->model('Pengunjung_model')->getAllPengunjung();
+        if (isset($_POST['keyword'])) {
+            $data['total_pengunjung']= $this->model('Pengunjung_model')->cari();
+        }else{
+            $data['total_pengunjung']= $this->model('Pengunjung_model')->getAllPengunjung();
+        }
         // var_dump($data['total_pengunjung']);die;
 
         //menampilkan view
@@ -33,8 +37,13 @@ class Admin extends Controller{
         $data['judul'] = "Berita";
 
         $data['login'] = $this->model('Auth_model')->getLoginById($_SESSION['id_login']);
+        // var_dump($_POST['keyword']);die;
         //mengambil data kelas
-        $data['Berita']= $this->model('Berita_model')->getAllBerita();
+        if (isset($_POST['keyword'])) {
+            $data['berita'] = $this->model('Berita_model')->cari();
+        }else{
+            $data['berita'] = $this->model('Berita_model')->getAllBerita();
+        }
 
 
         //menampilkan view
