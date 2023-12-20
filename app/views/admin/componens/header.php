@@ -18,7 +18,7 @@
 
   <script src="<?= BASEURL; ?>/public/js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
 
-  <script>tinymce.init({ selector: 'textarea' });</script>
+  <script>tinymce.init({ selector: '#mytextarea' });</script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
