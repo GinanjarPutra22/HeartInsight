@@ -33,8 +33,8 @@
                     <h1 class="display-6">Mengapa HeartInsight?</h1>
                     <p class="text-primary fs-5 mb-4">The Most Trusted Heakth Platform</p>
 
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet
-                        diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <!-- <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet
+                        diam et eos. Clita erat ipsum et lorem et sit.</p> -->
                     <div class="d-flex align-items-center mb-2">
                         <i class="fa fa-check bg-light text-primary btn-sm-square rounded-circle me-3 fw-bold"></i>
                         <span>Pengunaan yang mudah</span>
@@ -61,27 +61,29 @@
 
 
 <!-- Facts Start -->
-<div class="container-xxl bg-light py-5 my-5">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-4 col-md-6 text-center wow fadeIn" data-wow-delay="0.1s">
+<div class="container-xxl bg-light py-5 my-5 mx-auto">
+    <div class="container py-5 mx-auto ">
+        <div class="row g-5  mx-auto">
+            <!-- <div class="col-lg-4 col-md-6 text-center wow fadeIn" data-wow-delay="0.1s">
                 <img class="img-fluid mb-4" src="<?= BASEURL ?>/public/img/icon-9.png" alt="">
                 <h1 class="display-4" data-toggle="counter-up">12</h1>
                 <p class="fs-5 text-primary mb-0">Today Transactions</p>
-            </div>
+            </div> -->
             <div class="col-lg-4 col-md-6 text-center wow fadeIn" data-wow-delay="0.3s">
                 <img class="img-fluid mb-4" src="<?= BASEURL ?>/public/img/icon-10.png" alt="">
-                <h1 class="display-4" data-toggle="counter-up">16</h1>
-                <p class="fs-5 text-primary mb-0">Monthly Transactions</p>
+                <h1 class="display-4" data-toggle="counter-up">16 </h1>
+                <p class="fs-5 text-primary mb-0">Berita dalam sebulan</p>
             </div>
             <div class="col-lg-4 col-md-6 text-center wow fadeIn" data-wow-delay="0.5s">
                 <img class="img-fluid mb-4" src="<?= BASEURL ?>/public/img/icon-2.png" alt="">
                 <h1 class="display-4" data-toggle="counter-up">15</h1>
-                <p class="fs-5 text-primary mb-0">Total Transactions</p>
+                <p class="fs-5 text-primary mb-0">Total Pengguna</p>
             </div>
         </div>
     </div>
 </div>
+
+
 <!-- Facts End -->
 
 
@@ -97,9 +99,9 @@
                 <div class="d-flex align-items-start">
                     <img class="img-fluid flex-shrink-0" src="<?= BASEURL ?>/public/img/icon-7.png" alt="">
                     <div class="ps-4">
-                        <h5 class="mb-3">Easy To Start</h5>
-                        <span>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit
-                            clita duo justo</span>
+                        <h5 class="mb-3">Tanpa Biaya Apapun</h5>
+                        <!-- <span>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit
+                            clita duo justo</span> -->
                     </div>
                 </div>
             </div>
@@ -107,13 +109,13 @@
                 <div class="d-flex align-items-start">
                     <img class="img-fluid flex-shrink-0" src="<?= BASEURL ?>/public/img/icon-6.png" alt="">
                     <div class="ps-4">
-                        <h5 class="mb-3">Safe & Secure</h5>
-                        <span>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit
-                            clita duo justo</span>
+                        <h5 class="mb-3">Data Aman</h5>
+                        <!-- <span>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit
+                            clita duo justo</span> -->
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <!-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="d-flex align-items-start">
                     <img class="img-fluid flex-shrink-0" src="<?= BASEURL ?>/public/img/icon-5.png" alt="">
                     <div class="ps-4">
@@ -122,8 +124,8 @@
                             clita duo justo</span>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            </div> -->
+            <!-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="d-flex align-items-start">
                     <img class="img-fluid flex-shrink-0" src="<?= BASEURL ?>/public/img/icon-4.png" alt="">
                     <div class="ps-4">
@@ -142,14 +144,14 @@
                             clita duo justo</span>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="d-flex align-items-start">
                     <img class="img-fluid flex-shrink-0" src="<?= BASEURL ?>/public/img/icon-8.png" alt="">
                     <div class="ps-4">
                         <h5 class="mb-3">24/7 Support</h5>
-                        <span>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit
-                            clita duo justo</span>
+                        <!-- <span>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit
+                            clita duo justo</span> -->
                     </div>
                 </div>
             </div>
@@ -289,8 +291,8 @@
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et magna
-                                diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
+                                HeartInsight merupakan website informasi kesehatan jantung yang dilengkapi dengan
+                                pengecekan apakah user memiliki penyakit jantung apa tidak
                             </div>
                         </div>
                     </div>
@@ -298,14 +300,14 @@
                         <h2 class="accordion-header" id="headingTwo">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                How long will it take to get a new website?
+                                Apakah HeartInsight hanya digunakan pada website?
                             </button>
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et magna
-                                diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
+                                untuk saat ini HeartInsight hanya bisa digunakan menggunakan website di berbagai
+                                Platform gedget
                             </div>
                         </div>
                     </div>
@@ -313,92 +315,18 @@
                         <h2 class="accordion-header" id="headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Do you only create HTML websites?
+                                Bagaimana cara mengecek kesehatan jantung?
                             </button>
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et magna
-                                diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
+                                User hanya perlu memasukan data yang harus di inputkan, dan menekan cek kesehatan
+                                jantung
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
-                        <h2 class="accordion-header" id="headingFour">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                                Will my website be mobile-friendly?
-                            </button>
-                        </h2>
-                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et magna
-                                diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item wow fadeInUp" data-wow-delay="0.5s">
-                        <h2 class="accordion-header" id="headingFive">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                Will you maintain my site for me?
-                            </button>
-                        </h2>
-                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et magna
-                                diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item wow fadeInUp" data-wow-delay="0.6s">
-                        <h2 class="accordion-header" id="headingSix">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                I’m on a strict budget. Do you have any low cost options?
-                            </button>
-                        </h2>
-                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et magna
-                                diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item wow fadeInUp" data-wow-delay="0.7s">
-                        <h2 class="accordion-header" id="headingSeven">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                                Will you maintain my site for me?
-                            </button>
-                        </h2>
-                        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et magna
-                                diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item wow fadeInUp" data-wow-delay="0.8s">
-                        <h2 class="accordion-header" id="headingEight">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                                I’m on a strict budget. Do you have any low cost options?
-                            </button>
-                        </h2>
-                        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et magna
-                                diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
