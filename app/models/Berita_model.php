@@ -1,17 +1,14 @@
 <?php
 
-class Berita_model
-{
+class Berita_model {
     private $db;
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->db = new Database;
     }
 
     //untuk fetch data login
-    public function getBeritaById($id)
-    {
+    public function getBeritaById($id) {
         $this->db->query('UPDATE pengunjung SET total_pengunjung = total_pengunjung + 1 WHERE id_berita = :id');
         $this->db->bind('id', $id);
 
@@ -23,23 +20,19 @@ class Berita_model
 
         return $this->db->single();
     }
-    public function getDataBeritaById($id)
-    {
-        $this->db->query('SELECT * FROM berita
-                            WHERE id_berita=:id');
+    public function getDataBeritaById($id) {
+        $this->db->query('SELECT * FROM berita WHERE id_berita = :id');
         $this->db->bind('id', $id);
 
         return $this->db->single();
     }
-    public function getAllBerita()
-    {
+    public function getAllBerita() {
         $this->db->query('SELECT * FROM berita');
 
         return $this->db->resultSet();
     }
 
-    public function getRekomendasiBerita($id)
-    {
+    public function getRekomendasiBerita($id) {
         $this->db->query('SELECT * FROM berita 
                             INNER JOIN pengunjung ON berita.id_berita = pengunjung.id_berita 
                             WHERE berita.id_berita != :id
@@ -59,8 +52,7 @@ class Berita_model
     // }
 
     //ketika registt
-    public function tambahDataBerita($data)
-    {
+    public function tambahDataBerita($data) {
         // var_dump($data);die;
         try {
             $this->db->beginTransaction(); // Mulai transaksi
@@ -98,12 +90,11 @@ class Berita_model
             return $this->db->rowCount();
         } catch (PDOException $e) {
             $this->db->rollBack(); // Rollback jika terjadi kesalahan
-            die("Error: " . $e->getMessage());
+            die("Error: ".$e->getMessage());
         }
     }
 
-    public function ubahDataBerita($data)
-    {
+    public function ubahDataBerita($data) {
         $query = "UPDATE berita
             SET 
             judul_berita = :judul_berita, 
@@ -114,14 +105,14 @@ class Berita_model
 
         $fotolama = $data['e_foto_berita'];
 
-        if ($_FILES['foto_berita']['error'] === 4) {
+        if($_FILES['foto_berita']['error'] === 4) {
             $data['foto_berita'] = $fotolama;
         } else {
-            echo "Error code: " . $_FILES['foto_berita']['error'];
-            if ($fotolama === "1.png") {
+            echo "Error code: ".$_FILES['foto_berita']['error'];
+            if($fotolama === "1.png") {
                 $data['foto_berita'] = $this->tambahGambar();
             } else {
-                $tempat = "public/img/asset/" . $fotolama;
+                $tempat = "public/img/asset/".$fotolama;
                 unlink($tempat);
                 $data['foto_berita'] = $this->tambahGambar();
             }
@@ -208,8 +199,7 @@ class Berita_model
 
 
     //untuk set login dan set session
-    public function login($username, $password)
-    {
+    public function login($username, $password) {
         $query = "SELECT * FROM login WHERE username = :username";
         $this->db->query($query);
 
@@ -220,7 +210,7 @@ class Berita_model
         $user = $this->db->single();
 
         // if ($user && $password) {
-        if ($user && password_verify($password, $user['password'])) {
+        if($user && password_verify($password, $user['password'])) {
             // var_dump($user);die;
             $_SESSION['id_login'] = $user['id_login'];
             return $user; // Login berhasil
@@ -229,15 +219,14 @@ class Berita_model
         return false; // Login gagal
     }
 
-    public function tambahGambar()
-    {
+    public function tambahGambar() {
         $namafile = $_FILES['foto_berita']['name'];
         $ukuranfile = $_FILES['foto_berita']['size'];
         $error = $_FILES['foto_berita']['error'];
         $tmpname = $_FILES['foto_berita']['tmp_name'];
 
         // cek apakah ada gambar yang diupload
-        if ($error === 4) {
+        if($error === 4) {
             return false;
         }
 
@@ -248,13 +237,13 @@ class Berita_model
         $ekstensigambar = strtolower(end($ekstensigambar)); // strtolower merubah nama file menjadi lowercase/ huruf kecil
         // end mengambil explode yang paling akhir
 
-        if (!in_array($ekstensigambar, $ekstensigambarValid)) { // melakukan pengecekan string didalam array
+        if(!in_array($ekstensigambar, $ekstensigambarValid)) { // melakukan pengecekan string didalam array
             // fungsi ini menghasilkan true jika ada false jika tidak
             return false;
         }
 
         // cek jika ukurannya terlalu besar
-        if ($ukuranfile > 5000000000) { //dalam bentuk byte
+        if($ukuranfile > 5000000000) { //dalam bentuk byte
             return false;
         }
 
@@ -266,7 +255,7 @@ class Berita_model
         $namafilebaru .= $ekstensigambar;
 
         // mengirim kedalam directory 
-        move_uploaded_file($tmpname, 'public/img/berita/' . $namafilebaru);
+        move_uploaded_file($tmpname, 'public/img/berita/'.$namafilebaru);
 
         return $namafilebaru;
     }
