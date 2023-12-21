@@ -15,12 +15,12 @@ $(function () {
   $(".ModalUbahBerita").on("click", function () {
     $("#judulModalBerita").html("Ubah Data Berita");
     $(".modal-footer button[type=submit]").html("Ubah Data");
-    $(".modal-body form").attr("action", "http://localhost/digiskill_2.0/berita/ubah");
+    $(".modal-body form").attr("action", "http://localhost/heartinsight/berita/ubah");
 
     const id = $(this).data("id");
 
     $.ajax({
-      url: "http://localhost/digiskill_2.0/berita/getUbah",
+      url: "http://localhost/heartinsight/berita/getUbah",
       data: { id: id }, // kiri nama data,kanan isi data
       method: "post",
       dataType: "json",
